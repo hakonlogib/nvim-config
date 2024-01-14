@@ -12,3 +12,5 @@ lsp.nvim_workspace()
 lsp.setup()
 
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, opts)
+
+vim.keymap.set('n', '<C-a>', vim.lsp.buf.code_action, {})
