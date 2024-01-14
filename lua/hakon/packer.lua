@@ -49,5 +49,11 @@ return require('packer').startup(function(use)
     }
     use'm4xshen/autoclose.nvim'
     use "folke/tokyonight.nvim"
+    use {
+      'nvim-tree/nvim-tree.lua',
+      requires = {
+        'nvim-tree/nvim-web-devicons', -- optional
+    },
+}
 end)
 
