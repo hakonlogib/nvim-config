@@ -12,7 +12,7 @@ vim.keymap.set("n", "<leader>r","<C-w>l")
 vim.keymap.set("n", "<leader>u", "<C-w>k")
 vim.keymap.set("n", "<leader>d", "<C-w>j")
 
-vim.keymap.set("n", "<leader>c", "<C-w>q")
+--vim.keymap.set("n", "<leader>c", "<C-w>q")
 
 vim.keymap.set("n", "<leader>+", "<C-w>>")
 vim.keymap.set("n", "<leader>-", "<C-w><")
