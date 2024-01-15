@@ -19,7 +19,7 @@ vim.g.loaded_netrwPlugin = 1
 
 require("lazy").setup("plugins")
 
-require("lua/hakon/remaps")
-require("lua/hakon/configs")
+require("hakon/configs")
+require("hakon/remaps")
 
 
