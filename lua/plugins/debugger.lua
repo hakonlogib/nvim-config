@@ -1,7 +1,6 @@
 return {
-    "rcarriga/nvim-dap-ui", 
+    'rcarriga/nvim-dap-ui',
     dependencies = {"mfussenegger/nvim-dap"},
-    lazy = true,
     name = "dap",
     config = function()
         local dap = require("dap")
@@ -22,6 +21,9 @@ return {
         end
         vim.keymap.set("n", "<leader>b", dap.toggle_breakpoint, {})
         vim.keymap.set("n", "<leader>ct", dap.continue, {})
+
+        vim.api.nvim_set_keymap("n", "<leader>db", ":DapUiToggle<CR>", {noremap=true})
+        vim.api.nvim_set_keymap("n", "<leader>dr", ":lua require('dapui').open({reset = true})<CR>", {noremap = true})
     end
 }
 

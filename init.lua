@@ -1,9 +1,3 @@
---require("hakon")
---require("hakon.set") 
---require("autoclose").setup()
---require('lualine').setup()
-
-
 
 vim.g.mapleader = " "
 
@@ -22,26 +16,13 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 
-plugins = {
-
-    {
-        'nvim-telescope/telescope.nvim', tag = '0.1.4',
-        -- or                            , branch = '0.1.x',
-        dependencies = { {'nvim-lua/plenary.nvim'} }
-    },
-    'm4xshen/autoclose.nvim',
-    "folke/tokyonight.nvim",
-}
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-
-
-
-local opts = {}
-
 require("lazy").setup("plugins")
 
+
+--REMAPS
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
@@ -62,11 +43,10 @@ vim.keymap.set("n", "<leader>-", "<C-w><")
 
 vim.keymap.set("x", "<leader>p", "\"_dP")
 
---debugger
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
-vim.api.nvim_set_keymap("n", "<leader>db", ":DapUiToggle<CR>", {noremap=true})
-vim.api.nvim_set_keymap("n", "<leader>dr", ":lua require('dapui').open({reset = true})<CR>", {noremap = true})
-
+--CONFIG
 vim.opt.relativenumber = true
 vim.opt.nu = true
 
@@ -84,6 +64,4 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
 
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
