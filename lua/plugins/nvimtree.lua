@@ -27,7 +27,7 @@ return {
 		    group_empty = true,
 		  },
 		  filters = {
-		    dotfiles = true,
+		    dotfiles = false,
 		  },
 		})
 		vim.keymap.set('n', '<leader>t', api.tree.toggle, {})
