@@ -1,5 +1,4 @@
 vim.g.mapleader = " "
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -13,11 +12,15 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+--TODO: Split plugins into seperate files
+--TODO: LET IT GO
 
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 require("lazy").setup("plugins")
+vim.api.nvim_set_keymap("n", "<leader>ö", ":lua require('todo-list').example()<CR>", { noremap = true, silent = true })
+
 
 require("hakon/configs")
 require("hakon/remaps")
