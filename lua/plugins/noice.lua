@@ -33,8 +33,9 @@ return {
           },
         })
         --use below when transparent mode is on
-        -- require("notify").setup({
-        --   background_colour = "#000000",
-        -- })
+        require("notify").setup({
+            top_down = false;
+            background_colour = "#000000",
+        })
     end
 }
