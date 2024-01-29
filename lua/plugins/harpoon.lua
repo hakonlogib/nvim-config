@@ -14,7 +14,7 @@ return {
             ui.nav_file(2)
         end)
         vim.keymap.set("n", "<leader>3", function()
-            ui.nav_file(2)
+            ui.nav_file(3)
         end)
     end
 }
