@@ -34,7 +34,18 @@ return
 
 		lsp.setup()
 
-		vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, {})
+        --vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, {})
+		vim.keymap.set('n', '<leader>e', function()
+                BuffNr = vim.diagnostic.open_float()
+                local userAnswer = vim.fn.input("Enter input here: ")
+                print(userAnswer)
+                if userAnswer == "y" then
+                    vim.cmd('vsplit')
+                    local win = vim.api.nvim_get_current_win()
+                    vim.api.nvim_win_set_buf(win, BuffNr)
+                end
+        end)
+
 
 		vim.keymap.set('n', '<C-a>', vim.lsp.buf.code_action, {})
 
