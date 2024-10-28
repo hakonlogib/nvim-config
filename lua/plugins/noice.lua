@@ -32,7 +32,7 @@ return {
             lsp_doc_border = false, -- add a border to hover docs and signature help
           },
         })
-        --use below when transparent mode is on
+        -- use below when transparent mode is on
         require("notify").setup({
             top_down = false;
             background_colour = "#000000",
