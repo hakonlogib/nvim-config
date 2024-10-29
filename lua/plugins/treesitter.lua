@@ -6,7 +6,6 @@ return {
           ensure_installed = {"python", "javascript","typescript","go", "c", "lua", "vim"},
 
           sync_install = false,
-
           auto_install = true,
 
           indent = {

@@ -28,16 +28,21 @@ return
 		  suggest_lsp_servers = false,
 		})
 
+        local cmp = require('cmp')
+        local cmp_select = {behavior = cmp.SelectBehavior.Select}
+        lsp.setup_nvim_cmp({
+                mapping = lsp.defaults.cmp_mappings({
+                    ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+                    ['<Tab>'] = cmp.mapping.select_next_item(cmp_select)
+                })
+        })
 		-- (Optional) Configure lua language server for neovim
 		lsp.nvim_workspace()
-
-
 		lsp.setup()
-
         --vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, {})
 		vim.keymap.set('n', '<leader>e', function()
                 BuffNr = vim.diagnostic.open_float()
-                local userAnswer = vim.fn.input("Enter input here: ")
+                local userAnswer = vim.fn.input("Open in new split? (y/n): ")
                 print(userAnswer)
                 if userAnswer == "y" then
                     vim.cmd('vsplit')
